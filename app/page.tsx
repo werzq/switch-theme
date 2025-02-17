@@ -2,7 +2,7 @@
 
 import { Playfair_Display } from "next/font/google"
 import { Editor } from "@monaco-editor/react"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef} from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 
