@@ -22,8 +22,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="width=1024" />
+      </head>
       <body className={`${inter.className} overflow-hidden select-none`}>{children}</body>
     </html>
   )
 }
-

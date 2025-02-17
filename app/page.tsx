@@ -136,23 +136,12 @@ const minifiedCode = `javascript:(function(){const d=document.documentElement.ge
 
 export default function BookmarkletPage() {
   const bookmarkRef = useRef<HTMLAnchorElement>(null)
-  const [fontSize, setFontSize] = useState(14);
 
   useEffect(() => {
     if (bookmarkRef.current) {
       bookmarkRef.current.href = minifiedCode
     }
   }, [])
-
-  useEffect(() => {
-    const updateFontSize = () => {
-      setFontSize(window.innerWidth < 768 ? 8 : 14);
-    };
-
-    updateFontSize();
-    window.addEventListener("resize", updateFontSize);
-    return () => window.removeEventListener("resize", updateFontSize);
-  }, []);
 
   return (
     <motion.div
@@ -241,7 +230,7 @@ export default function BookmarkletPage() {
                   options={{
                     readOnly: true,
                     minimap: { enabled: false },
-                    fontSize: fontSize,
+                    fontSize: 14,
                     lineNumbers: "on",
                     scrollBeyondLastLine: false,
                     wordWrap: "off",
